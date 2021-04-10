@@ -1,1 +1,1 @@
-web: gunicorn python Websocket_Server.py
+web: python Websocket_Server.py
