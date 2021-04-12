@@ -59,7 +59,7 @@ async def getMessage(websocket, path):
         await unregister(websocket)
 
 #setup
-start_server = websockets.serve(getMessage, "0.0.0.0", 5050)
+start_server = websockets.serve(getMessage, "localhost", 5050)
 print(start_server)
 asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
