@@ -2,6 +2,7 @@ import websockets
 import json
 import logging
 import asyncio
+import os
 
 logging.basicConfig()
 
