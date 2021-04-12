@@ -5,6 +5,7 @@ import asyncio
 
 logging.basicConfig()
 
+PORT = int(os.environ.get('PORT', 5000))
 # data model
 STATE = {"id": 0, "message": "", "author": "", "path": ""}
 # dictionary of messages
@@ -59,7 +60,7 @@ async def getMessage(websocket, path):
         await unregister(websocket)
 
 #setup
-start_server = websockets.serve(getMessage, "0.0.0.0")
+start_server = websockets.serve(getMessage, "0.0.0.0", PORT)
 print(start_server)
 asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
