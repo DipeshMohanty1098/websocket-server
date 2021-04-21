@@ -57,6 +57,7 @@ async def getMessage(websocket, path):
                     # dont send the message back to client that sent the message
                     if user != websocket:
                         await user.send(message)
+                message = None
     finally:
         await unregister(websocket)
 
